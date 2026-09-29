@@ -1,4 +1,6 @@
 from models.comportements.comportement import Comportement
+from models.actions.action_attaque import ActionAttaque
+from models.actions.action_defense import ActionDefense
 
 
 class ComportementFurtif(Comportement):
@@ -9,8 +11,8 @@ class ComportementFurtif(Comportement):
     def agir(self, ennemi) -> str:
         self._tour += 1
         if self._tour % 2 == 0:
-            return "attaque"
-        return "defend"
+            return ActionAttaque()
+        return ActionDefense()
 
     def __str__(self) -> str:
         return "furtif"
