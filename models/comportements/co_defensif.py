@@ -1,4 +1,4 @@
-from models.comportements.comportement import Comportement
+from models.comportement import Comportement
 from models.actions.action_defense import ActionDefense
 
 

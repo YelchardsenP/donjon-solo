@@ -5,6 +5,7 @@ from models.comportements.co_defensif import ComportementDefensif
 from models.comportements.co_aleatoire import ComportementAleatoire
 from models.comportements.co_furtif import ComportementFurtif
 from models.comportements.co_berserker import ComportementBerserker
+from models.comportements.co_boss import ComportementBoss
 
 
 class Jeu:
@@ -18,7 +19,8 @@ class Jeu:
             Ennemi("Dragon",  hp=100, attaque=12, comportement=ComportementDefensif()),
             Ennemi("Spectre", hp=40,  attaque=10, comportement=ComportementAleatoire()),
             Ennemi("Voleur",  hp=30,  attaque=10, comportement=ComportementFurtif()),
-            Ennemi("Son Goku", hp=200, attaque=10, comportement=ComportementBerserker())
+            Ennemi("Son Goku", hp=200, attaque=10, comportement=ComportementBerserker()),
+            Ennemi("Boss Troll", hp=300, attaque=15, comportement=ComportementBoss()),
         ]
 
     def ennemis_vivants(self):
@@ -74,7 +76,7 @@ class Jeu:
             print("--- Résultats ---")
 
             #Attaque secrète ultime 1
-            #emojis hollow purple : 🔴🌀🌑✨🌌
+           
             if action_heros == "genkidama":
                 print("\n🌌 Vous levez les mains vers le ciel...")
                 time.sleep(1)
