@@ -43,10 +43,10 @@ class Jeu:
             # Demander l'action du héros
             while True:
                 action = input("Votre action ? (a)ttaquer / (d)éfendre : ").strip().lower()
-                if action in ["a", "d", "x"]:
+                if action in ["a", "d", "x", "m"]:
                     break
                 print("Choix invalide.")
-            action_heros = "attaque" if action == "a" else "genkidama" if action == "x" else "defend"
+            action_heros = "attaque" if action == "a" else "genkidama" if action == "x" else "murasaki" if action == "m" else "defend"
 
             
             
@@ -73,7 +73,7 @@ class Jeu:
 
             print("--- Résultats ---")
 
-            #Attaque secrète ultime
+            #Attaque secrète ultime 1
             #emojis hollow purple : 🔴🌀🌑✨🌌
             if action_heros == "genkidama":
                 print("\n🌌 Vous levez les mains vers le ciel...")
@@ -87,27 +87,75 @@ class Jeu:
                     time.sleep(0.3)
 
                 print("""
-                        ✨
-                    ✨ ✨ ✨
-                ✨ ✨ ✨ ✨ ✨
-                ✨ ✨ ✨ ✨ ✨ ✨ 
-                ✨ ✨ ✨ ✨ ✨
-                    ✨ ✨ ✨
-                        ✨
+                            🌌🌌
+                        🌌🌌🌌🌌🌌
+                    🌌🌌🌌🌌🌌🌌🌌🌌
+                   🌌🌌🌌🌌🌌🌌🌌🌌🌌
+                    🌌🌌🌌🌌🌌🌌🌌🌌
+                        🌌🌌🌌🌌🌌
+                            🌌🌌
 
-                    ☄️  GENKIDAMA  ☄️
+                     ✨🌀 GENKIDAMA !!! 🌀✨
                 """)
 
                 time.sleep(1)
 
-                print("💥💥💥 L'ÉNERGIE EST LÂCHÉE !!! 💥💥💥")
+                print("💥💥💥 KABOOMMMM 💥💥💥")
                 time.sleep(1)
 
                 for i in range(3):
                     print("💥" * (i + 1) * 5)
                     time.sleep(0.3)
 
-                # Anéantit tous les ennemis
+                # Anéantit la moitié des hp tous les ennemis
+                for ennemi in vivants:
+                    ennemi.recevoir_degats(ennemi.hp_max * 0.5)
+
+                print("\n☠️ Tous les ennemis ont perdu la moitié de leur santé !")
+                time.sleep(1)
+            
+            #Attaque secrète ultime 2
+            #emojis hollow purple : 🔴🌀🌑✨🌌
+            if action_heros == "murasaki":
+                print("\n🔴🔴Le rouge..🔴🔴")
+                time.sleep(1)
+
+                print("✨ 🌀🌀Le bleu..🌀🌀")
+                time.sleep(1)
+
+                print("🔴       🌀")
+                time.sleep(0.1)
+
+                print("🔴      🌀")
+                time.sleep(0.1)
+
+                print("🔴     🌀")
+                time.sleep(0.1)
+
+                print("🔴   🌀")
+                time.sleep(0.1)
+
+                print("🔴   🌀")
+                time.sleep(0.1)
+
+                print("🔴  🌀")
+                time.sleep(0.1)
+
+                print("🔴 🌀")
+                time.sleep(0.1)
+
+                print("🔴🌀")
+                time.sleep(0.1)
+
+                print("🔴🌑🌑🌑🌀")
+                time.sleep(0.5)
+
+                print("🌑🌑🌑")
+                time.sleep(1)
+
+            
+
+                # Anéantit la moitié des hp tous les ennemis
                 for ennemi in vivants:
                     ennemi.recevoir_degats(ennemi.hp)
 
